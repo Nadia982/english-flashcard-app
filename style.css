@@ -1,0 +1,106 @@
+:root {
+    --primary-dark: #001e4d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  text-align: center;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+body {
+    background-color: var(--primary-dark);
+}
+
+.container {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-between;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    height: 90vh;
+    gap: 3em;
+  }
+  
+.container h1 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+}
+
+.quiz {
+    padding: 20px 0;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.quiz h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.title {
+    margin-top: 1em;
+}
+
+#answer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    /* margin-bottom: 1em; */
+}
+
+.btn {
+    background: #fff;
+    color: #222;
+    font-weight: 600;
+    width: 100%; 
+    border: 1px solid #222;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    font-weight: 600;
+    letter-spacing: 1.1;
+}
+
+.btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+#next-btn{
+    background: var(--primary-dark);
+    color: #fff;
+    font-size: 1.5rem;
+    /* font-weight: 600; */
+    letter-spacing: 1.1;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    border: 1px solid var(--primary-dark);
+    display: none;
+}
+
+#next-btn:hover{
+    color: var(--primary-dark);
+    background: #fff;
+    
+}
