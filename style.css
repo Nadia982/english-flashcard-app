@@ -104,3 +104,23 @@ body {
     background: #fff;
     
 }
+
+.correct {
+    background: #9aeabc;
+}
+
+.correct:hover {
+    background: #9aeabc;
+    color: #000;
+}
+
+.incorrect {
+     background: #ff6060;
+ 
+}
+
+.incorrect:hover {
+    background: #ff6060;
+    color: #000;
+
+}
