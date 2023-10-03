@@ -87,6 +87,10 @@ body {
     color: #fff;
 }
 
+.btn:disabled {
+    cursor: default;
+}
+
 #next-btn{
     background: var(--primary-dark);
     color: #fff;
