@@ -67,6 +67,7 @@ const showQuestion = () => {
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
+    button.setAttribute("tabindex", 0);
     button.classList.add("btn");
     answerButtons.appendChild(button);
     if(answer.correct){
@@ -85,9 +86,11 @@ const resetState = () => {
 
 const selectAnswer = (e) => {
     const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true"; 
-    if(isCorrect){
+    // const notSelected = Array.from(answerButtons.children).filter(element => e != target);
+    const isCorrect = selectedBtn.dataset.correct === "true";
+        if(isCorrect){
         selectedBtn.classList.add("correct");
+        // notSelected.classList.add("incorrect");
     } else {
         selectedBtn.classList.add("incorrect");
     }
