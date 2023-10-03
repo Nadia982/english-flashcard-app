@@ -29,9 +29,39 @@ body {
     height: 90vh;
     gap: 3em;
   }
+
+  .title-container {
+    display: flex;
+    align-items:last baseline;
+    justify-content: space-evenly;
+  }
+  
+  .flag {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 30px;
+    width: 48px;
+  }
+  
+  .vertical-stripe {
+    position: absolute;
+    background-color: red;
+    height: 100%;
+    width: 5px;
+  }
+  
+  .horizontal-stripe {
+    background-color: red;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+  }
   
 .container h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-dark);
     font-weight: 600;
     border-bottom: 1px solid #333;

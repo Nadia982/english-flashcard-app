@@ -1,7 +1,7 @@
 const questions = [
   {
     question:
-      "Which word should be used to fill the gap in the following sentence? '_______ time is it?'",
+      "Which word should be used to fill the gap? '_______ time is it?'",
     answers: [
       { text: "Which", correct: false },
       { text: "What", correct: true },
@@ -10,36 +10,37 @@ const questions = [
   {
     question: "Which phrase is correct?",
     answers: [
-      { text: "I moved to the US?", correct: true },
+      { text: "I moved to the US", correct: true },
       { text: "I moved to US", correct: false },
     ],
   },
   {
-    question: "Which phrase is correct?",
+    question: "Thank you for _______ to help me.",
+    
     answers: [
-      { text: "Thank you for accepting to help me.", correct: false },
-      { text: "Thank you for agreeing to help me.", correct: true },
+      { text: "accepting", correct: false },
+      { text: "agreeing", correct: true },
     ],
   },
   {
-    question: "Which phrase is correct?",
+    question: "He washed his _______.",
     answers: [
-      { text: "He washed his feets.", correct: false },
-      { text: "He washed his feet.", correct: true },
+      { text: "feets", correct: false },
+      { text: "feet", correct: true },
     ],
   },
   {
-    question: "Which phrase is correct?",
+    question: "I'll call you when _______ come back",
     answers: [
-      { text: "I'll call you when I come back.", correct: true },
-      { text: "I'll call you when I'll come back.", correct: false },
+      { text: "I", correct: true },
+      { text: "I'll", correct: false },
     ],
   },
   {
-    question: "Which phrase is correct?",
+    question: "Please let me know if I _______ a mistake",
     answers: [
-      { text: "Please let me know if I make a mistake.", correct: true },
-      { text: "Please let me know if I do a mistake.", correct: false },
+      { text: "make", correct: true },
+      { text: "do", correct: false },
     ],
   },
 ];
@@ -90,7 +91,7 @@ const selectAnswer = (e) => {
     const isCorrect = selectedBtn.dataset.correct === "true";
         if(isCorrect){
         selectedBtn.classList.add("correct");
-        // notSelected.classList.add("incorrect");
+        score++;
     } else {
         selectedBtn.classList.add("incorrect");
     }
@@ -100,8 +101,31 @@ const selectAnswer = (e) => {
         }
         button.disabled = true;
     });
-    nextButton.style.display = "block";
-    
+    nextButton.style.display = "block";    
 }
+
+const showScore = () => {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}`;
+  nextButton.innerHTML = `Play again`;
+  nextButton.style.display = "block";
+};
+
+const handleNextButton = () => {
+  currentQuestionIndex++;
+  if(currentQuestionIndex < questions.length){
+    showQuestion()
+  } else {
+    showScore();
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  if(currentQuestionIndex < questions.length){
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+})
 
 startQuiz();
